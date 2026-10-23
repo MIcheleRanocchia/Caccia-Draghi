@@ -9,5 +9,8 @@ public class Main {
         Drago Paolo = new Drago("Paolo" , nBattiti );
 
         Paolo.run();
+        for(int i = 0; i <=5; i++){
+            System.out.println("sta succendendo qualcosa");
+        }
         }
     }
