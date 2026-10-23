@@ -9,18 +9,13 @@ public class Drago implements Runnable {
 
     @Override
     public void run() {
-        while (!Thread.interrupted()) {
-            for (int i = 0; i < nBattiti; i++) {
+            for (int i = 0;(i < nBattiti) && !Thread.interrupted(); i++) {
                 System.out.println(this.nome + " Vola per la: " + (i + 1) + " volta");
-                System.out.println(this.nome + " Vola per la: " + (i + 1) + " volta");
-                System.out.println(this.nome + " Vola per la: " + (i + 1) + " volta");
-
-                try {
-                    Thread.sleep(1000);
-                } catch (InterruptedException e) {
-                    System.out.println("Sleep interrotto" + e);
-                }
+//                try {
+//                    Thread.sleep(1000);
+//                } catch (InterruptedException e) {
+//                    System.out.println("Sleep interrotto" + e);
+//                }
             }
         }
     }
-}
