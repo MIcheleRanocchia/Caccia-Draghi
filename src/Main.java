@@ -5,12 +5,19 @@ public class Main {
         Scanner intTastiera = new Scanner(System.in);
         System.out.println("INSERISCI IL NUMERO BATTITI: ");
         int nBattiti = intTastiera.nextInt();
+        Cacciatore Mariangela = new Cacciatore("Mariangela");
 
-        Drago Paolo = new Drago("Paolo" , nBattiti );
+        Thread drago1 = new Thread(new Drago("Paolo" , nBattiti ));
 
-        Paolo.run();
+        drago1.start();
+        Mariangela.colpisciDrago(drago1);
         for(int i = 0; i <=5; i++){
-            System.out.println("sta succendendo qualcosa");
+            System.out.println("sta succendendo qualcosa" + i);
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                System.out.println("Sleep interrotto" + e);
+            }
         }
         }
     }
